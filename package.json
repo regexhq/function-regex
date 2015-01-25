@@ -1,7 +1,7 @@
 {
   "name": "function-regex",
   "version": "0.0.0",
-  "description": "Function regex. Expose match groups for function name, arguments and function body.",
+  "description": "Function regex. Regular expression for matching function parts. Expose match groups for function name, arguments and function body.",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
     "test": "mocha",
@@ -21,6 +21,9 @@
     "args",
     "arguments",
     "body",
+    "express",
+    "expression",
+    "expressions",
     "function",
     "functions",
     "match",
@@ -28,7 +31,8 @@
     "re",
     "regex",
     "regexp",
-    "regexps"
+    "regexps",
+    "regular"
   ],
   "license": {
     "type": "MIT",

@@ -1,6 +1,6 @@
-## [![npm][npmjs-img]][npmjs-url] [![mit license][license-img]][license-url] [![build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url]
+## [![npm][npmjs-img]][npmjs-url] [![mit license][license-img]][license-url] [![build status][travis-img]][travis-url]
 
-> Function regex. Expose match groups for function name, arguments and function body.
+> Function regex. Regular expression for matching function parts. Expose match groups for function name, arguments and function body.
 
 ## Install
 ```bash
@@ -59,4 +59,4 @@ Released under the [`MIT`][license-url] license.
 
 ***
 
-_Powered and automated by [kdf](https://github.com/tunnckoCore), January 25, 2015_
+_Powered and automated by [kdf](https://github.com/tunnckoCore), January 26, 2015_
