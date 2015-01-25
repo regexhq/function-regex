@@ -14,10 +14,31 @@ npm test
 
 ```js
 var functionRegex = require('function-regex');
+
+var fixture = function testing(args, opts, dest, cb) {
+  return cb ? {
+    opts: [1,2,3];
+  } : true;
+};
+
+fixture.toString().match(functionRegex());
+//=> [1] = 'testing'
+//=> [2] = 'args, opts, dest, cb'
+//=> [3] = '\n    return cb ? {\n      opts: [1,2,3],\n      args: args\n    } : true;\n  '
+
+
+'function(val, re) { return true; }'.match(functionRegex());
+//=> [1] = ''
+//=> [2] = 'val, re'
+//=> [3] = ' return true; '
 ```
 
 
-## API / CLI
+### Matching groups
++ `[0]` full function (`'function(val, re) { return true; }'`)
++ `[1]` function name (`'testing'`)
++ `[2]` function arguments (`'args, opts, dest, cb'`)
++ `[3]` function body (`' return true; '`)
 
 
 ## Author
