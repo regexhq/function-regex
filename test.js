@@ -10,13 +10,14 @@
 var assert = require('assert');
 var fnRegex = require('./index');
 var cleanupCoverageCode = require('cleanup-coverage-code');
+var coverageCodeRegex = require('coverage-code-regex');
 var fixtures = require('./fixtures');
 
 function match(str) {
   return str.toString().match(fnRegex());
 }
 
-function hackExpected(expected) {
+function hackLastTestExpected(expected) {
   expected = expected.split('var').filter(Boolean);
   expected = expected.map(function(val) {
     return val.replace(/\s+/g,'');
@@ -48,8 +49,9 @@ describe('function-regex:', function() {
     var expected = 'cmd, args, opts';
 
     // hack, because the coverage tools remove whitespaces
-    actual = actual.split(',').join(', ');
-    assert.strictEqual(actual, expected);
+    actual = actual.replace(/\s+/g, '').split(/,/)
+    expected = expected.replace(/\s+/g, '').split(',')
+    assert.deepEqual(actual, expected);
 
     // fixtureTwo
     actual = match(fixtures.fixtureTwo().fn)[2]
@@ -61,23 +63,14 @@ describe('function-regex:', function() {
 
   it('should match function body (fixtureOne)', function(done) {
     var actual = match(fixtures.fixtureOne().fn)[3]
-    var expected = hackExpected(fixtures.fixtureOne().body);
+    var expected = fixtures.fixtureOne().body;
 
     // hack, because the coverage tools add some ugly code
     // like `__cov_Ejgcx$XN18CSfmeWn$f7vQ.f['2']++`
-    actual = cleanupCoverageCode(actual);
-
-    assert.strictEqual(actual, expected);
-    done();
-  });
-
-  it('should match function body (fixtureTwo)', function(done) {
-    var actual = match(fixtures.fixtureOne().fn)[3]
-    var expected = hackExpected(fixtures.fixtureOne().body);
-
-    // hack, because the coverage tools add some ugly code
-    // like `__cov_Ejgcx$XN18CSfmeWn$f7vQ.f['2']++`
-    actual = cleanupCoverageCode(actual);
+    if (coverageCodeRegex().test(actual)) {
+      actual = cleanupCoverageCode(actual);
+      expected = hackLastTestExpected(expected);
+    }
 
     assert.strictEqual(actual, expected);
     done();
