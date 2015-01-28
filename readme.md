@@ -18,7 +18,7 @@ var functionRegex = require('function-regex');
 
 var fixture = function testing(args, opts, dest, cb) {
   return cb ? {
-    opts: [1,2,3];
+    opts: [1,2,3]
   } : true;
 };
 
@@ -81,4 +81,4 @@ Released under the [`MIT`][license-url] license.
 
 ***
 
-_Powered and automated by [kdf](https://github.com/tunnckoCore), January 26, 2015_
+_Powered and automated by [kdf](https://github.com/tunnckoCore), January 27, 2015_
