@@ -1,6 +1,6 @@
 {
   "name": "function-regex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Function regex. Regular expression for matching function parts. Expose match groups for function name, arguments and function body.",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
