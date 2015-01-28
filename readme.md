@@ -1,4 +1,5 @@
-## [![npm][npmjs-img]][npmjs-url] [![mit license][license-img]][license-url] [![build status][travis-img]][travis-url]
+## [![npm][npmjs-img]][npmjs-url] [![mit license][license-img]][license-url] [![build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![deps status][daviddm-img]][daviddm-url]
+
 
 > Function regex. Regular expression for matching function parts. Expose match groups for function name, arguments and function body.
 
@@ -68,7 +69,7 @@ Released under the [`MIT`][license-url] license.
 [travis-img]: https://img.shields.io/travis/regexps/function-regex.svg?style=flat
 
 [daviddm-url]: https://david-dm.org/regexps/function-regex
-[daviddm-img]: https://img.shields.io/david/regexps/function-regex.svg?style=flat
+[daviddm-img]: https://img.shields.io/david/dev/regexps/function-regex.svg?style=flat
 
 [author-gratipay]: https://gratipay.com/tunnckoCore
 [author-twitter]: https://twitter.com/tunnckoCore
