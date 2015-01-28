@@ -1,5 +1,3 @@
-
-
 /**
  * function-regex <https://github.com/tunnckoCore/function-regex>
  *
